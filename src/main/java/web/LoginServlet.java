@@ -17,7 +17,7 @@ import database.LoginDao;
 /**
  * @email Ramesh Fadatare
  */
-
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private LoginDao loginDao;
@@ -57,9 +57,9 @@ public class LoginServlet extends HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        doGet(request, response);
+        //doGet(request, response);
     }
-
+/*
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -98,4 +98,6 @@ public class LoginServlet extends HttpServlet {
         }
 
     }
+
+ */
 }

@@ -5,11 +5,11 @@
          version="4.0">
 
          <servlet>
-             <servlet-name>List_Ticket</servlet-name>
-             <servlet-class>web.LoginServlet</servlet-class>
+             <servlet-name>DeleteServlet</servlet-name>
+             <servlet-class>web.DeleteServlet</servlet-class>
          </servlet>
          <servlet-mapping>
-             <servlet-name>List_Ticket</servlet-name>
-             <url-pattern>/delete/*</url-pattern>
+             <servlet-name>DeleteServlet</servlet-name>
+             <url-pattern>/delete</url-pattern>
          </servlet-mapping>
 </web-app>

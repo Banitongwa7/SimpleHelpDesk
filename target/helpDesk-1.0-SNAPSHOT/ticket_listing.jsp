@@ -50,7 +50,7 @@
                     <td><%= rset.getString("typeAppareil") %></td>
                     <td><%= rset.getString("service") %></td>
                     <td><%= rset.getString("message") %></td>
-                    <td><a href="/delete?idcheck=<%= rset.getInt("id") %>"><input type="button" name="delete_t" value="Traiter" class="btn btn-success"/></a></td>
+                    <td><a href="delete?id=<%= rset.getInt("id") %>"><input type="button" name="delete_t" value="Traiter" class="btn btn-success"/></a></td>
                 </tr>
         <%
             }
