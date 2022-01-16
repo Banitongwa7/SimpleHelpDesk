@@ -1,77 +1,97 @@
 <%--
   Created by IntelliJ IDEA.
   User: davidb
-  Date: 11/01/2022
-  Time: 21:20
+  Date: 08/01/2022
+  Time: 00:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>HelpDesk | Login</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
 
-  <title>HelpDesk | Home</title>
+        body {
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
-<body>
-<div class="container contact-form">
-  <div class="contact-image">
-    <img src="image2.png" alt="rocket_contact"/>
-  </div>
-  <form action="<%=request.getContextPath()%>/login" method="post">
-    <h3>Obtenez votre ticket en remplissant ce formulaire</h3>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" name="txtName" class="form-control" placeholder="Nom complet" value="" />
-        </div>
-        <div class="form-group">
-          <input type="email" name="txtEmail" class="form-control" placeholder="Email" value="" />
-        </div>
-        <div class="form-group">
-          <select class="form-select  form-control" name="typeService">
-            <option selected>Type de service</option>
-            <option value="Reparation">Réparation</option>
-            <option value="Diagnostic">Diagnostic</option>
-            <option value="Renseignement">Renseignement</option>
-          </select>
-        </div>
-      </div>
+<body class="text-center">
 
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="tel" name="txtPhone" class="form-control" placeholder="Numero Téléphone"/>
+<main class="form-signin">
+    <form action="<%=request.getContextPath()%>/login" method="post">
+        <img class="mb-4" src="image2.png" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Connexion</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+            <label for="floatingInput">Username</label>
         </div>
-        <div class="form-group">
-          <select class="form-select  form-control" name="typeApp">
-            <option selected>Type d'appareil</option>
-            <option value="Ordinateur">Ordinateur</option>
-            <option value="Smartphone">Smartphone</option>
-            <option value="Tablette">Tablette</option>
-          </select>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group mt-5">
-                    <textarea name="txtMessage" class="form-control" placeholder="Votre message"
-                              style="width: 100%; height: 150px;"></textarea>
-      </div>
-      <div class="form-group my-5 text-center">
-        <input type="submit" name="btnSubmit" class="btnContact" value="Obtenir ticket" />
-      </div>
-    </div>
-  </form>
-  <a href="ticket_listing.jsp" class="btn btn-primary mt-3">Voir les ticket</a>
-</div>
 
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Se Connecter</button>
+    </form>
+</main>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
