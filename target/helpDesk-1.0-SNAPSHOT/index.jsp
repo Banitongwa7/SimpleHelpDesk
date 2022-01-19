@@ -11,87 +11,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/loginStyle.css"/>
+    <!-- Javascript here -->
+    <script defer src="js/login.js"></script>
+
     <title>HelpDesk | Login</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #f5f5f5;
-        }
-
-        .form-signin {
-            width: 100%;
-            max-width: 330px;
-            padding: 15px;
-            margin: auto;
-        }
-
-        .form-signin .checkbox {
-            font-weight: 400;
-        }
-
-        .form-signin .form-floating:focus-within {
-            z-index: 2;
-        }
-
-        .form-signin input[type="email"] {
-            margin-bottom: -1px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="password"] {
-            margin-bottom: 10px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 </head>
-<body class="text-center">
+<body>
 
-<main class="form-signin">
-    <form action="<%=request.getContextPath()%>/login" method="post">
-        <img class="mb-4" src="image2.png" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Connexion</h1>
-
-        <div class="form-floating">
-            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
-            <label for="floatingInput">Username</label>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="<%=request.getContextPath()%>/signup" method="post">
+            <h1>Créer votre compte</h1>
+            <input type="text" name="nomNew" placeholder="Nom" />
+            <input type="text" name="prenomNew" placeholder="Prénom" />
+            <input type="email" name="emailNew" placeholder="Email" />
+            <input type="password" name="passwordNew" placeholder="Mot de passe" />
+            <input type="password" name="confirmNew" placeholder="Confirmer mot de passe" />
+            <button>Valider</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="<%=request.getContextPath()%>/login" method="post">
+            <h1>HelpDesk</h1>
+            <span>Se connecter avec son compte</span>
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            <a href="#">Mot de passe oublié ?</a>
+            <button>Se connecter</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Content de te revoir ! </h1>
+                <p>Pour rester en contact avec nous, veuillez vous connecter avec vos informations personnelles</p>
+                <button class="ghost" id="signIn">Se connecter</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Salut !</h1>
+                <p>Entrez vos données personnelles pour utiliser notre service.</p>
+                <button class="ghost" id="signUp">Créer un compte</button>
+            </div>
         </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Se Connecter</button>
-    </form>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
-</script>
+    </div>
+</div>
 
 </body>
 </html>

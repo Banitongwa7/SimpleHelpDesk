@@ -14,14 +14,14 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>HelpDesk | Home</title>
 </head>
 <body>
 <div class="container contact-form">
   <div class="contact-image">
-    <img src="image2.png" alt="rocket_contact"/>
+    <img src="img/image2.png" alt="rocket_contact"/>
   </div>
   <form action="<%=request.getContextPath()%>/insert" method="post">
     <h3>Obtenez votre ticket en remplissant ce formulaire</h3>

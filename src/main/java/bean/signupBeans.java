@@ -1,18 +1,25 @@
 package bean;
 
-public class loginBeans {
-
-    private String username;
+public class signupBeans {
+    private String nom;
+    private String prenom;
     private String email;
     private String password;
 
-
-    public String getUsername() {
-        return username;
+    public String getNom() {
+        return nom;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getEmail() {

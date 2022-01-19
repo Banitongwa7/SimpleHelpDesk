@@ -1,7 +1,7 @@
 package web;
 
 import bean.loginBeans;
-import database.LoginDao;
+import database.Dao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,14 +26,14 @@ public class LoginServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
+        String email = req.getParameter("email");
         String password = req.getParameter("password");
 
         loginBeans loginbean = new loginBeans();
-        loginbean.setUsername(username);
+        loginbean.setEmail(email);
         loginbean.setPassword(password);
 
-        LoginDao connect = new LoginDao();
+        Dao connect = new Dao();
 
         if(connect.loginUser(loginbean))
         {

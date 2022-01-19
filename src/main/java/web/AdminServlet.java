@@ -1,7 +1,7 @@
 package web;
 
 import bean.loginBeans;
-import database.LoginDao;
+import database.Dao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +30,7 @@ public class AdminServlet extends HttpServlet {
             loginbean.setUsername(username);
             loginbean.setPassword(password);
 
-            LoginDao connect = new LoginDao();
+            Dao connect = new Dao();
 
             if(connect.loginAdmin(loginbean))
             {
@@ -40,6 +40,5 @@ public class AdminServlet extends HttpServlet {
             {
                 resp.sendRedirect("admin_login.jsp");
             }
-
         }
 }

@@ -1,7 +1,7 @@
 package web;
 
 import bean.lesBeans;
-import database.LoginDao;
+import database.Dao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +16,10 @@ import java.io.IOException;
 public class InsertServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private LoginDao loginDao;
+    private Dao dao;
 
     public void init() {
-        loginDao = new LoginDao();
+        dao = new Dao();
     }
 
 
@@ -41,7 +41,7 @@ public class InsertServlet extends HttpServlet {
         bean.setMessage(message);
 
         try {
-            if (loginDao.insert(bean)) {
+            if (dao.insert(bean)) {
                 //HttpSession session = request.getSession();
                 // session.setAttribute("username",username);
                 response.sendRedirect("ticket.jsp");
