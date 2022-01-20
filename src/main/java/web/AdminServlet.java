@@ -26,9 +26,7 @@ public class AdminServlet extends HttpServlet {
             String username = req.getParameter("username");
             String password = req.getParameter("password");
 
-            loginBeans loginbean = new loginBeans();
-            loginbean.setUsername(username);
-            loginbean.setPassword(password);
+            loginBeans loginbean = new loginBeans(username, password);
 
             Dao connect = new Dao();
 

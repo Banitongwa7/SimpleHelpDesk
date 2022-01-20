@@ -6,6 +6,15 @@ public class loginBeans {
     private String email;
     private String password;
 
+    public loginBeans()
+    {
+
+    }
+
+    public loginBeans(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;

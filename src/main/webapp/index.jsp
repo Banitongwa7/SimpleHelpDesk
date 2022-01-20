@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="database.Dao" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -25,9 +26,9 @@
     <div class="form-container sign-up-container">
         <form action="<%=request.getContextPath()%>/signup" method="post">
             <h1>Créer votre compte</h1>
-            <input type="text" name="nomNew" placeholder="Nom" />
-            <input type="text" name="prenomNew" placeholder="Prénom" />
-            <input type="email" name="emailNew" placeholder="Email" />
+            <input type="text" name="nomNew" placeholder="Nom"/>
+            <input type="text" name="prenomNew" placeholder="Prénom"/>
+            <input type="email" name="emailNew" placeholder="Email"/>
             <input type="password" name="passwordNew" placeholder="Mot de passe" />
             <input type="password" name="confirmNew" placeholder="Confirmer mot de passe" />
             <button>Valider</button>

@@ -110,7 +110,7 @@ public class Dao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpdesk?serverTimezone=UTC", "root", "");
             stmt = conn.prepareStatement("Select * from admin where nomadmin = ? and passadmin = ?");
-            stmt.setString(1, loginbean.getEmail());
+            stmt.setString(1, loginbean.getUsername());
             stmt.setString(2, loginbean.getPassword());
             rset = stmt.executeQuery();
             trouve = rset.next();
@@ -125,4 +125,89 @@ public class Dao {
         }
         return trouve;
     }
+
+    public int nombreUser()
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rset = null;
+        int nbr = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpdesk?serverTimezone=UTC", "root", "");
+            stmt = conn.prepareStatement("Select * from user");
+            rset = stmt.executeQuery();
+            while(rset.next())
+            {
+                nbr = nbr+1;
+            }
+
+            rset.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e1) {
+            System.out.println(e1.getMessage());
+        } catch (ClassNotFoundException e2) {
+            System.out.println(e2.getMessage());
+        }
+        return nbr;
+    }
+
+    public int nombreAdmin()
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rset = null;
+        int nbr = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpdesk?serverTimezone=UTC", "root", "");
+            stmt = conn.prepareStatement("Select * from admin");
+            rset = stmt.executeQuery();
+            while(rset.next())
+            {
+                nbr = nbr+1;
+            }
+
+            rset.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e1) {
+            System.out.println(e1.getMessage());
+        } catch (ClassNotFoundException e2) {
+            System.out.println(e2.getMessage());
+        }
+        return nbr;
+    }
+
+
+
+    public int nombreTicket()
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rset = null;
+        int nbr = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpdesk?serverTimezone=UTC", "root", "");
+            stmt = conn.prepareStatement("Select * from ticket");
+            rset = stmt.executeQuery();
+            while(rset.next())
+            {
+                nbr = nbr+1;
+            }
+
+            rset.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e1) {
+            System.out.println(e1.getMessage());
+        } catch (ClassNotFoundException e2) {
+            System.out.println(e2.getMessage());
+        }
+        return nbr;
+    }
+
 }
+

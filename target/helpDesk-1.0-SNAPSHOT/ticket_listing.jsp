@@ -8,6 +8,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="database.Dao" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,8 +19,66 @@
     <title>HelpDesk | Ticket</title>
 </head>
 <body>
+<% Dao nbr = new Dao(); %>
 <div class="container">
-    <h2 class="text-center mt-5">Liste des Tickets</h2>
+    <h2 class="text-center mt-5">Espace Administrateur</h2>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-8">
+            <div class="main-content">
+                <div class="page-content">
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-end mt-2">
+                                        <div id="total-revenue-chart"></div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup"><%= nbr.nombreUser() %></span></h4>
+                                        <p class="text-muted mb-0">Nombre d'utilisateur</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col-->
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-end mt-2">
+                                        <div id="orders-chart"> </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup"><%= nbr.nombreTicket() %></span></h4>
+                                        <p class="text-muted mb-0">Tickets </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col-->
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-end mt-2">
+                                        <div id="customers-chart"> </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup"><%= nbr.nombreAdmin() %></span></h4>
+                                        <p class="text-muted mb-0">Administrateurs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end col-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <table class="table table-hover table-primary mt-5">
         <thead>
@@ -75,5 +134,21 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="assets/libs/jquery/jquery.min.js"></script>
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="assets/libs/simplebar/simplebar.min.js"></script>
+<script src="assets/libs/node-waves/waves.min.js"></script>
+<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+
+<!-- apexcharts -->
+<script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="assets/js/pages/dashboard.init.js"></script>
+<!-- App js -->
+<script src="assets/js/app.js"></script>
 </body>
 </html>
